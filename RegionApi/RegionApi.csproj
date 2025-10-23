@@ -14,11 +14,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.10" />
-    <EmbeddedResource Include="Sql\Add_Region.sql" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Sql\" />
   </ItemGroup>
 
 </Project>
