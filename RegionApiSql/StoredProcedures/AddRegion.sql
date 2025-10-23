@@ -12,7 +12,7 @@ BEGIN
   IF @parent_id IS NULL OR @name IS NULL
     THROW 50000, 'Both parent_id and name are required.', 1;
 
-  -- Normalize name (optional)
+  -- Normalize name
   SET @name = LTRIM(RTRIM(@name));
 
   DECLARE
@@ -45,7 +45,6 @@ BEGIN
   END
 
   -- 3) Duplicate child-name check under same parent
-  --    If you created UX_Regions_ParentNode_Name, this also protects at DDL level.
   IF EXISTS (
       SELECT 1
       FROM dbo.Regions AS c WITH (UPDLOCK, HOLDLOCK)
